@@ -1,6 +1,6 @@
 # Table of contents
 
-* [About Learnova](README.md)
+* [Tentang Learnova](README.md)
 * [Topology](topology.md)
 
 ## Instances
