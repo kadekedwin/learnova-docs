@@ -2,15 +2,10 @@
 
 * [About Learnova](README.md)
 
-## Getting Started
+## Services
 
-* [Quickstart](getting-started/quickstart.md)
-* [Publish your docs](getting-started/publish-your-docs.md)
-
-## Basics
-
-* [Editor](basics/editor.md)
-* [Markdown](basics/markdown.md)
-* [Images & media](basics/images-and-media.md)
-* [Interactive blocks](basics/interactive-blocks.md)
-* [Integrations](basics/integrations.md)
+* [Proxmox](services/proxmox.md)
+* [Windows Server](services/windows-server.md)
+* [App Server](services/app-server.md)
+* [Monitoring Server](services/monitoring-server.md)
+* [Gateway Server](services/gateway-server.md)

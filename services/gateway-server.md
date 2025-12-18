@@ -1,0 +1,6 @@
+---
+icon: ubuntu
+---
+
+# Gateway Server
+

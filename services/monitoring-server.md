@@ -1,0 +1,6 @@
+---
+icon: ubuntu
+---
+
+# Monitoring Server
+
