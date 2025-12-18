@@ -4,66 +4,64 @@ icon: windows
 
 # Windows Server
 
-The Windows Server in the Learnova platform functions as the **centralized user and policy management server**. It is responsible for domain control, user authentication, Group Policy enforcement, and client integration within the Learnova educational environment.
+Windows Server pada platform **Learnova** berfungsi sebagai **server pusat untuk manajemen pengguna dan kebijakan**. Server ini bertanggung jawab atas **pengendalian domain, autentikasi pengguna, penerapan Group Policy, serta integrasi klien** dalam lingkungan pendidikan Learnova.
 
-### Network Configuration
+### Konfigurasi Jaringan
 
-The Windows Server has been configured with a **static IP address** to ensure stability and consistent domain services.
+Windows Server telah dikonfigurasi menggunakan **alamat IP statis** untuk menjamin stabilitas dan konsistensi layanan domain.
 
-* IP Address: _192.168.16.3_
-* DNS Server: _127.0.0.1_
-* Network Mode: Internal / LAN
+* **Alamat IP**: 192.168.16.3
+* **DNS Server**: 127.0.0.1
+* **Mode Jaringan**: Internal / LAN
 
-Client machines obtain their IP addresses automatically via **DHCP from the router**, allowing seamless network connectivity without manual IP configuration on each client device.
+Mesin klien memperoleh alamat IP secara otomatis melalui **DHCP dari router**, sehingga konektivitas jaringan dapat berjalan dengan lancar tanpa perlu konfigurasi IP secara manual pada setiap perangkat klien.
 
 ### Active Directory Domain Services (AD DS)
 
-#### Forest and Domain Setup
+#### Konfigurasi Forest dan Domain
 
-The Active Directory Domain Services role has been installed and configured with the following domain structure:
+Peran **Active Directory Domain Services (AD DS)** telah diinstal dan dikonfigurasi dengan struktur domain sebagai berikut:
 
-* **Forest Name:** `gpo.learnova.edu`
-* **Domain Type:** Single forest, single domain
-* **Domain Controller:** Windows Server (Primary DC)
+* **Nama Forest**: gpo.learnova.edu
+* **Tipe Domain**: Single forest, single domain
+* **Domain Controller**: Windows Server (Primary DC)
 
-This configuration allows centralized identity management and Group Policy enforcement across all Learnova clients.
+Konfigurasi ini memungkinkan **manajemen identitas terpusat** serta **penerapan Group Policy** secara terintegrasi pada seluruh klien Learnova.
 
-### Organizational Units (OU) Structure
+### Struktur Organizational Unit (OU)
 
-To separate policy management and administrative control, two main Organizational Units (OU) were created:
+Untuk memisahkan manajemen kebijakan dan kontrol administratif, telah dibuat dua **Organizational Unit (OU)** utama, yaitu:
 
-| OU Name          | Description                    |
-| ---------------- | ------------------------------ |
-| Learnova Staff   | Contains staff user accounts   |
-| Learnova Student | Contains student user accounts |
+| Nama OU          | Deskripsi                    |
+| ---------------- | ---------------------------- |
+| Learnova Staff   | Berisi staff user accounts   |
+| Learnova Student | Berisi student user accounts |
 
-### User Account
+### Akun Pengguna (User Account)
 
-Domain user accounts that  have been created:
+Beberapa **akun pengguna domain** telah dibuat dan ditempatkan sesuai dengan OU masing-masing untuk mendukung struktur manajemen dan penerapan kebijakan yang efektif.
 
-| Username | Role    | OU Placement     |
+| Username | Role    | OU               |
 | -------- | ------- | ---------------- |
 | catur    | Staff   | Learnova Staff   |
 | amelia   | Student | Learnova Student |
 
-### Group Policy Object (GPO) Configuration
+### Konfigurasi Group Policy Object (GPO)
 
-Group Policy Objects (GPO) have been configured and linked to the respective Organizational Units to enforce different rules and restrictions based on user roles.
+**Group Policy Object (GPO)** telah dikonfigurasi dan ditautkan ke **Organizational Unit (OU)** yang sesuai untuk menerapkan aturan dan pembatasan yang berbeda berdasarkan peran pengguna.
 
-* GPOs are linked at the **OU level**
-* Policies are applied automatically when users log in to domain-joined client machines
-* Staff and students receive **different policy sets**
+* GPO ditautkan pada tingkat OU
+* Kebijakan diterapkan secara otomatis saat pengguna login ke komputer klien yang tergabung dalam domain
+* Staf dan mahasiswa menerima set kebijakan yang berbeda
 
-### GPO Application Table
+<table><thead><tr><th width="244.57421875">OU</th><th>Nama GPO</th></tr></thead><tbody><tr><td>Student dan Staff</td><td>Disable Control Panel &#x26; Settings</td></tr><tr><td>Student dan Staff</td><td>Disable Command Prompt</td></tr><tr><td>Student dan Staff</td><td>Disable Regedit</td></tr><tr><td>Student dan Staff</td><td>Auto Lock / Auto Logoff After Idle</td></tr><tr><td>Student dan Staff</td><td>Disable Powershell</td></tr><tr><td>Student</td><td>Disable USB Storage</td></tr><tr><td>Student</td><td>Disable Software Installation</td></tr><tr><td>Student</td><td>Create Student Folder in C:\</td></tr><tr><td>Staff</td><td>Create Staff Folder in C:\</td></tr></tbody></table>
 
-<table><thead><tr><th width="244.57421875">OU</th><th>GPO Name</th></tr></thead><tbody><tr><td>Student and Staff</td><td>Disable Control Panel &#x26; Settings</td></tr><tr><td>Student and Staff</td><td>Disable Command Prompt</td></tr><tr><td>Student and Staff</td><td>Disable Regedit</td></tr><tr><td>Student and Staff</td><td>Auto Lock / Auto Logoff After Idle</td></tr><tr><td>Student and Staff</td><td>Disable Powershell</td></tr><tr><td>Student</td><td>Disable USB Storage</td></tr><tr><td>Student</td><td>Disable Software Installation</td></tr><tr><td>Student</td><td>Create Student Folder in C:\</td></tr><tr><td>Staff</td><td>Create Staff Folder in C:\</td></tr></tbody></table>
+### Konfigurasi Klien
 
-### Client Configuration
+Komputer klien dikonfigurasi dengan pengaturan sebagai berikut:
 
-Client computers are configured as follows:
+* **Pengalamatan IP**: Otomatis (DHCP dari router)
+* **Resolusi DNS**: Disediakan oleh Windows Server (Domain Controller)
+* **Domain Join**: Klien tergabung ke domain **gpo.learnova.edu**
 
-* IP Addressing: **Automatic (DHCP from Router)**
-* DNS Resolution: Provided by Windows Server (Domain Controller)
-* Domain Join: Clients are joined to `gpo.learnova.edu`
-
-This setup allows clients to automatically receive IP addresses and domain policies without manual network configuration.
+Konfigurasi ini memungkinkan klien untuk secara otomatis memperoleh alamat IP serta kebijakan domain tanpa perlu pengaturan jaringan secara manual.

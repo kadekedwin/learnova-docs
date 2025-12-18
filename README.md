@@ -21,80 +21,80 @@ metaLinks:
 
 # About Learnova
 
-**Learnova** is an educational private cloud service built on top of **Proxmox Virtual Environment (Proxmox VE)**. It is designed to support school or educational institution infrastructure by providing centralized management, cloud services, monitoring, and secure external access.
+**Learnova** adalah layanan **private cloud pendidikan** yang dibangun di atas **Proxmox Virtual Environment (Proxmox VE)**. Platform ini dirancang untuk mendukung infrastruktur sekolah atau institusi pendidikan dengan menyediakan **manajemen terpusat, layanan cloud, sistem monitoring, serta akses eksternal yang aman**.
 
-The platform is composed of several dedicated virtual servers, each with a specific role:
+Platform Learnova terdiri dari beberapa **server virtual khusus**, masing-masing dengan peran yang berbeda dan saling terintegrasi.
 
-### 1. Proxmox Virtualization Layer
+### 1. Lapisan Virtualisasi Proxmox
 
-Proxmox VE acts as the core infrastructure layer, providing:
+**Proxmox Virtual Environment (Proxmox VE)** berperan sebagai lapisan infrastruktur inti yang menyediakan:
 
-* Virtual machine (VM) management
-* Resource allocation (CPU, RAM, storage)
-* High availability and isolation between services
-* Centralized control of all servers in the Learnova environment
+* Manajemen mesin virtual (Virtual Machine / VM)
+* Alokasi sumber daya (CPU, RAM, dan penyimpanan)
+* Ketersediaan tinggi (high availability) dan isolasi antar layanan
+* Kontrol terpusat terhadap seluruh server dalam lingkungan Learnova
 
-All Learnova services run as virtual machines within Proxmox.
+Seluruh layanan Learnova dijalankan dalam bentuk **mesin virtual** yang dikelola oleh Proxmox VE.
 
-### 2. Windows Server (User & Client Management)
+### 2. Windows Server (Manajemen Pengguna dan Klien)
 
-The **Windows Server** is responsible for:
+**Windows Server** bertanggung jawab dalam:
 
-* Managing client users (students, teachers, staff)
-* Centralized authentication and authorization
-* User policies and access control
-* Device and user management within the Learnova ecosystem
+* Mengelola pengguna klien (siswa, guru, dan staf)
+* Autentikasi dan otorisasi terpusat
+* Penerapan kebijakan pengguna dan kontrol akses
+* Manajemen perangkat dan pengguna dalam ekosistem Learnova
 
-This server enables structured and secure user administration for the school environment.
+Server ini memungkinkan administrasi pengguna yang **terstruktur, aman, dan terpusat** sesuai dengan kebutuhan lingkungan sekolah.
 
-### 3. Ubuntu Application Server (Cloud Services)
+### 3. Ubuntu Application Server (Layanan Cloud)
 
-The **Ubuntu App Server** provides cloud-based services, including:
+**Ubuntu Application Server** menyediakan layanan berbasis cloud, antara lain:
 
-* **Nextcloud** for file storage, sharing, and collaboration
-* **Landing Page** website of Learnova Education
+* **Nextcloud** untuk penyimpanan file, berbagi data, dan kolaborasi
+* **Website Landing Page Learnova Education**
 
-This server acts as the primary application layer for Learnova.
+Server ini berfungsi sebagai **lapisan aplikasi utama** pada platform Learnova.
 
-### 4. Ubuntu Monitoring Server (Observability)
+### 4. Ubuntu Monitoring Server (Observabilitas)
 
-The **Monitoring Server** is built using:
+Server monitoring dibangun menggunakan:
 
-* **Prometheus** for metrics collection
-* **Grafana** for visualization and dashboards
+* **Prometheus** untuk pengumpulan metrik
+* **Grafana** untuk visualisasi dan dashboard
 
-Its functions include:
+Fungsi utama server monitoring meliputi:
 
-* Monitoring server performance (CPU, RAM, disk, network)
-* Tracking service availability
-* Detecting performance issues early
-* Providing dashboards for administrators
-* Detect Network Speed in realtime on each minutes
+* Memantau performa server (CPU, RAM, disk, dan jaringan)
+* Memantau ketersediaan layanan
+* Mendeteksi masalah performa secara dini
+* Menyediakan dashboard pemantauan untuk administrator
+* Mendeteksi kecepatan jaringan secara real-time setiap menit
 
-This ensures system reliability and proactive maintenance.
+Dengan adanya sistem ini, keandalan sistem dapat terjaga dan pemeliharaan dapat dilakukan secara proaktif.
 
-### 5. Ubuntu Gateway Server (Ingress & Security)
+### 5. Ubuntu Gateway Server (Ingress dan Keamanan)
 
-The **Gateway Server** serves as the entry point to the Learnova platform and uses:
+**Gateway Server** berfungsi sebagai pintu masuk utama ke platform Learnova dan menggunakan:
 
-* **Cloudflared** as a secure ingress solution
+* **Cloudflared** sebagai solusi ingress yang aman
 
-Responsibilities include:
+Tanggung jawab Gateway Server meliputi:
 
-* Securely exposing internal services to the internet
-* Acting as a reverse proxy for all servers
-* Eliminating the need for direct public IP exposure
-* Enhancing security through encrypted tunnels
+* Mengekspos layanan internal ke internet secara aman
+* Bertindak sebagai reverse proxy untuk seluruh server
+* Menghilangkan kebutuhan penggunaan IP publik langsung
+* Meningkatkan keamanan melalui tunnel terenkripsi
 
-All external access to Learnova services is routed through this gateway.
+Seluruh akses eksternal ke layanan Learnova diarahkan melalui server gateway ini.
 
-### Learnova Architecture Summary
+### Ringkasan Arsitektur Learnova
 
-Learnova delivers a **secure, scalable, and centrally managed private cloud** for educational institutions by combining:
+Learnova menghadirkan **private cloud pendidikan yang aman, skalabel, dan dikelola secara terpusat** dengan mengombinasikan:
 
-* Proxmox virtualization
-* Windows-based user management
-* Linux-based cloud and monitoring services
-* Secure ingress via Cloudflared
+* Virtualisasi Proxmox
+* Manajemen pengguna berbasis Windows
+* Layanan cloud dan monitoring berbasis Linux
+* Akses aman melalui Cloudflared
 
-This architecture enables schools to provide modern IT services such as cloud storage, centralized user management, and real-time monitoring while maintaining security and control.
+Arsitektur ini memungkinkan sekolah menyediakan layanan TI modern seperti **penyimpanan cloud, manajemen pengguna terpusat, dan pemantauan sistem secara real-time**, sambil tetap menjaga **keamanan dan kendali penuh** atas infrastruktur.
