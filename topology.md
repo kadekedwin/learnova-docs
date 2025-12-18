@@ -6,7 +6,7 @@ icon: sitemap
 
 Tipologi jaringan Learnova dirancang menggunakan pendekatan **terpusat (centralized topology)** dengan **router sebagai gateway utama**, **Proxmox sebagai server virtualisasi**, serta **segmentasi jaringan** untuk memisahkan akses **student, staff, dan admin**.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Arsitektur ini bertujuan untuk:
 
@@ -42,12 +42,12 @@ Proxmox bridge memungkinkan setiap mesin virtual mendapatkan akses jaringan lang
 
 Melalui Proxmox bridge, beberapa server virtual dijalankan dengan alamat IP statis sebagai berikut:
 
-| Server                   | Sistem Operasi | IP Address     | Fungsi Utama              |
-| ------------------------ | -------------- | -------------- | ------------------------- |
-| Windows Server           | Windows Server | `192.168.16.3` | Domain Controller & GPO   |
-| Ubuntu App Server        | Ubuntu Server  | `192.168.16.4` | Nextcloud (Cloud Service) |
-| Ubuntu Monitoring Server | Ubuntu Server  | `192.168.16.5` | Grafana & Prometheus      |
-| Ubuntu Gateway Server    | Ubuntu Server  | `192.168.16.6` | Cloudflared Ingress       |
+| Server                   | Sistem Operasi | IP Address     | Fungsi Utama               |
+| ------------------------ | -------------- | -------------- | -------------------------- |
+| Windows Server           | Windows Server | `192.168.16.3` | Domain Controller & GPO    |
+| Ubuntu App Server        | Ubuntu Server  | `192.168.16.4` | Nextcloud dan Landing Page |
+| Ubuntu Monitoring Server | Ubuntu Server  | `192.168.16.5` | Grafana & Prometheus       |
+| Ubuntu Gateway Server    | Ubuntu Server  | `192.168.16.6` | Cloudflared Ingress        |
 
 Semua server berada dalam satu segmen jaringan server untuk mempermudah komunikasi internal dan pengelolaan.
 
