@@ -6,7 +6,7 @@ icon: sitemap
 
 Tipologi jaringan Learnova dirancang menggunakan pendekatan **terpusat (centralized topology)** dengan **router sebagai gateway utama**, **Proxmox sebagai server virtualisasi**, serta **segmentasi jaringan** untuk memisahkan akses **student, staff, dan admin**.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Arsitektur ini bertujuan untuk:
 
@@ -55,46 +55,55 @@ Semua server berada dalam satu segmen jaringan server untuk mempermudah komunika
 
 Jaringan client dibagi menjadi beberapa subnet berdasarkan peran pengguna. **Seluruh client menggunakan DHCP** sehingga alamat IP diberikan secara otomatis oleh router.
 
+#### Jaringan Client Wireless (2.4 GHz)
+
+Seluruh user yang terhubung secara **wireless melalui jaringan 2.4 GHz** mendapatkan alamat IP secara otomatis melalui DHCP.
+
+* Network: `192.168.100.0/24`
+* Gateway: `192.168.100.1`
+* IP Address: DHCP (otomatis)
+* Media: Wi-Fi 2.4 GHz
+
 #### Jaringan Client Student
 
 * Network: `192.168.20.0/24`
 * Gateway: `192.168.20.1`
 * IP Address: DHCP (otomatis)
-* Media: Wi-Fi 2.4 GHz / LAN
+* Media: LAN
 
 #### Jaringan Client Staff
 
 * Network: `192.168.25.0/24`
 * Gateway: `192.168.25.1`
 * IP Address: DHCP (otomatis)
-* Media: Wi-Fi 2.4 GHz / LAN
+* Media: LAN
 
 #### Jaringan Client Admin
 
 * Network: `192.168.30.0/24`
 * Gateway: `192.168.30.1`
 * IP Address: DHCP (otomatis)
-* Media: Wi-Fi 2.4 GHz / LAN
-
-DNS client diarahkan ke **Windows Server (`192.168.16.3`)** untuk mendukung proses join domain dan penerapan Group Policy.
+* Media: LAN
 
 ### Alur Koneksi Jaringan
 
-1. Router terhubung ke hotspot HP (5 GHz) sebagai sumber internet
-2. Router mendistribusikan koneksi internet ke seluruh jaringan
-3. Client terhubung ke router melalui Wi-Fi 2.4 GHz atau LAN
-4. Client mendapatkan IP otomatis melalui DHCP
-5. Client mengakses layanan Learnova sesuai hak akses
-6. Akses eksternal layanan diarahkan melalui Ubuntu Gateway (Cloudflared)
+* Router terhubung ke hotspot HP (5 GHz) sebagai sumber internet
+* Router mendistribusikan koneksi internet ke seluruh subnet
+* Client terhubung:
+  * Wireless 2.4 GHz → `192.168.100.0/24`
+  * Wired → subnet sesuai peran
+* Client mendapatkan IP otomatis melalui DHCP
+* Client mengakses layanan Learnova sesuai kebijakan
+* Akses eksternal layanan melalui Ubuntu Gateway (Cloudflared)
 
 ### Ringkasan Tipologi
 
-Tipologi jaringan Learnova mengintegrasikan:
+Tipologi jaringan Learnova kini mencakup:
 
-* Router sebagai gateway, DHCP server, dan internet distributor
-* Hotspot HP 5 GHz sebagai koneksi internet
-* Wi-Fi 2.4 GHz untuk koneksi client
-* Proxmox sebagai platform virtualisasi
-* Server dan client tersegmentasi dengan baik
+* Internet dari hotspot HP (5 GHz)
+* Wi-Fi 2.4 GHz untuk akses user umum
+* Segmentasi LAN berbasis peran
+* DHCP terpusat pada router
+* Infrastruktur server berbasis Proxmox
 
-Desain ini mendukung sistem pembelajaran digital yang **fleksibel, terkontrol, dan mudah dikelola**.
+Desain ini memberikan **fleksibilitas koneksi**, **kemudahan manajemen**, dan **keamanan jaringan** untuk lingkungan pendidikan Learnova.
