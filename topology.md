@@ -6,7 +6,7 @@ icon: sitemap
 
 Tipologi jaringan Learnova dirancang menggunakan pendekatan **terpusat (centralized topology)** dengan **router sebagai gateway utama**, **Proxmox sebagai server virtualisasi**, serta **segmentasi jaringan** untuk memisahkan akses **student, staff, dan admin**.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Jarprise (1).jpg" alt=""><figcaption></figcaption></figure>
 
 Arsitektur ini bertujuan untuk:
 
