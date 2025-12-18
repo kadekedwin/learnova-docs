@@ -48,6 +48,7 @@ Melalui Proxmox bridge, beberapa server virtual dijalankan dengan alamat IP stat
 | Ubuntu App Server        | Ubuntu Server  | `192.168.16.4` | Nextcloud dan Landing Page |
 | Ubuntu Monitoring Server | Ubuntu Server  | `192.168.16.5` | Grafana & Prometheus       |
 | Ubuntu Gateway Server    | Ubuntu Server  | `192.168.16.6` | Cloudflared Ingress        |
+| Ubuntu BTest Server      | Ubuntu Server  | `192.168.16.7` | Bandwith Speed Test        |
 
 Semua server berada dalam satu segmen jaringan server untuk mempermudah komunikasi internal dan pengelolaan.
 
@@ -95,6 +96,7 @@ Seluruh user yang terhubung secara **wireless melalui jaringan 2.4 GHz** mendapa
 * Client mendapatkan IP otomatis melalui DHCP
 * Client mengakses layanan Learnova sesuai kebijakan
 * Akses eksternal layanan melalui Ubuntu Gateway (Cloudflared)
+* Pengujian jaringan dilakukan ke Ubuntu BTest Server
 
 ### Ringkasan Tipologi
 
@@ -103,6 +105,7 @@ Tipologi jaringan Learnova kini mencakup:
 * Internet dari hotspot HP (5 GHz)
 * Wi-Fi 2.4 GHz untuk akses user umum
 * Segmentasi LAN berbasis peran
+* Evaluasi QoS dan bandwidth
 * DHCP terpusat pada router
 * Infrastruktur server berbasis Proxmox
 

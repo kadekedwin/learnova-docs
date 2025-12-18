@@ -19,7 +19,7 @@ metaLinks:
     - https://app.gitbook.com/s/yE16Xb3IemPxJWydtPOj/
 ---
 
-# About Learnova
+# Tentang Learnova
 
 **Learnova** adalah layanan **private cloud pendidikan** yang dibangun di atas **Proxmox Virtual Environment (Proxmox VE)**. Platform ini dirancang untuk mendukung infrastruktur sekolah atau institusi pendidikan dengan menyediakan **manajemen terpusat, layanan cloud, sistem monitoring, serta akses eksternal yang aman**.
 
@@ -87,6 +87,20 @@ Tanggung jawab Gateway Server meliputi:
 * Meningkatkan keamanan melalui tunnel terenkripsi
 
 Seluruh akses eksternal ke layanan Learnova diarahkan melalui server gateway ini.
+
+### 6. Ubuntu BTest Server (Pengujian Bandwidth dan QoS)
+
+Learnova **menggunakan Ubuntu BTest Server** sebagai server khusus untuk melakukan **pengujian performa jaringan**.
+
+Ubuntu BTest Server digunakan untuk:
+
+* Mengukur bandwidth jaringan
+* Menguji kecepatan transfer data (_throughput_)
+* Mengukur latency, jitter, dan packet loss
+* Melakukan evaluasi **Quality of Service (QoS)**
+* Memvalidasi kualitas jaringan untuk client wired dan wireless
+
+Pengujian dilakukan dari sisi client menuju Ubuntu BTest Server sehingga hasil pengukuran mencerminkan kondisi jaringan yang sebenarnya.
 
 ### Ringkasan Arsitektur Learnova
 
