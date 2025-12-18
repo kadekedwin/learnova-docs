@@ -1,11 +1,14 @@
 # Table of contents
 
 * [About Learnova](README.md)
+* [Topology](topology.md)
 
-## Services
+## Instances
 
-* [Proxmox](services/proxmox.md)
-* [Windows Server](services/windows-server.md)
-* [App Server](services/app-server.md)
-* [Monitoring Server](services/monitoring-server.md)
-* [Gateway Server](services/gateway-server.md)
+* [Proxmox](instances/proxmox.md)
+* [Mikrotik](instances/mikrotik.md)
+* [Windows Server](instances/windows-server.md)
+* [App Server](instances/app-server.md)
+* [Monitoring Server](instances/monitoring-server.md)
+* [Gateway Server](instances/gateway-server.md)
+* [BTest Server](instances/btest-server.md)
