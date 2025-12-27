@@ -6,7 +6,7 @@ icon: sitemap
 
 Tipologi jaringan Learnova menggunakan arsitektur sederhana dengan proxmox untuk menjalankan semua system virtualisasi, **windows server, app server, etc**
 
-<figure><img src=".gitbook/assets/Jarprise (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Jaringan Utama
 
@@ -45,4 +45,4 @@ Tipologi jaringan Learnova menggunakan arsitektur sederhana dengan proxmox untuk
 
 ### Server Virtual pada Proxmox
 
-<table><thead><tr><th>Server</th><th width="166.0078125">Sistem Operasi</th><th>IP Address</th><th>Fungsi Utama</th></tr></thead><tbody><tr><td>Windows Server</td><td>Windows Server</td><td><code>192.168.16.3</code></td><td>Domain Controller &#x26; GPO</td></tr><tr><td>Ubuntu App Server</td><td>Ubuntu Server</td><td><code>192.168.16.4</code></td><td>Nextcloud dan Landing Page</td></tr><tr><td>Ubuntu Monitoring Server</td><td>Ubuntu Server</td><td><code>192.168.16.5</code></td><td>Grafana &#x26; Prometheus</td></tr><tr><td>Ubuntu Gateway Server</td><td>Ubuntu Server</td><td><code>192.168.16.6</code></td><td>Cloudflared Ingress</td></tr><tr><td>Ubuntu BTest Server</td><td>Ubuntu Server</td><td><code>192.168.16.7</code></td><td>Bandwith Speed Test</td></tr></tbody></table>
+<table><thead><tr><th>Server</th><th width="166.0078125">Sistem Operasi</th><th>IP Address</th><th>SSH Port</th><th>Fungsi Utama</th></tr></thead><tbody><tr><td>Windows Server</td><td>Windows Server</td><td><code>192.168.16.3</code></td><td>-</td><td>Domain Controller &#x26; GPO</td></tr><tr><td>Ubuntu App Server</td><td>Ubuntu Server</td><td><code>192.168.16.4</code></td><td>1604</td><td>Nextcloud dan Landing Page</td></tr><tr><td>Ubuntu Monitoring Server</td><td>Ubuntu Server</td><td><code>192.168.16.5</code></td><td>1605</td><td>Grafana &#x26; Prometheus</td></tr><tr><td>Ubuntu Gateway Server</td><td>Ubuntu Server</td><td><code>192.168.16.6</code></td><td>1606</td><td>Cloudflared Ingress</td></tr><tr><td>Ubuntu BTest Server</td><td>Ubuntu Server</td><td><code>192.168.16.7</code></td><td>-</td><td>Bandwith Speed Test</td></tr></tbody></table>
